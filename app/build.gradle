@@ -9,12 +9,37 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        ndk {
+            abiFilters 'armeabi-v7a', "x86"
+        }
+
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // https://github.com/ReactiveX/RxJava/issues/4445
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+    // 为DEX 编译器 设置最大的堆大小
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -25,4 +50,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation project(path: ':mvpbinding')
+
+    // 方法数扩容
+    implementation 'androidx.multidex:multidex:2.0.1'
 }
