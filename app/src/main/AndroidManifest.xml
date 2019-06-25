@@ -4,7 +4,7 @@
     package="me.jingbin.mvpbinding">
 
     <application
-        android:name=".base.App"
+        android:name="me.jingbin.mvpbinding.base.App"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".MainActivity">
+        <activity android:name="me.jingbin.mvpbinding.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

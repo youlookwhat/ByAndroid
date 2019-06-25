@@ -8,6 +8,9 @@ import androidx.multidex.MultiDexApplication;
 import com.bumptech.glide.Glide;
 
 
+/**
+ * @author jingbin
+ */
 public class App extends MultiDexApplication {
 
     private static App app;

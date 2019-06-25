@@ -2,6 +2,8 @@ apply plugin: 'java-library'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation 'androidx.appcompat:appcompat:1.0.2'
+
     // 网络请求
     api 'com.google.code.gson:gson:2.8.5'
     api 'com.squareup.retrofit2:retrofit:2.4.0'
@@ -21,11 +23,14 @@ dependencies {
 
     // recylerview
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
+
     // Glide
     api 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    // Cause: element == null
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     // 高斯模糊和圆角等
     api 'jp.wasabeef:glide-transformations:4.0.1'
+
     // rxbus
     api 'io.reactivex:rxandroid:1.2.1'
     // 状态栏
