@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_base_title"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:background="@color/colorWhite"
+    tools:ignore="UselessParent">
+
+    <!--左侧返回图标-->
+    <ImageView
+        android:id="@+id/ib_base_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/icon_back"
+        android:visibility="visible" />
+
+    <!--左侧文字:取消-->
+    <TextView
+        android:id="@+id/tv_base_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:text="取消"
+        android:textColor="@color/colorTheme"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <!--中间文字-->
+    <TextView
+        android:id="@+id/tv_base_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxEms="9"
+        android:maxLines="1"
+        android:textColor="@color/colorText"
+        android:textSize="16sp"
+        tools:text="标题" />
+
+    <!--右侧菜单图标-->
+    <ImageView
+        android:id="@+id/iv_base_right_one"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentEnd="true"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/icon_back"
+        android:visibility="gone" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorLine" />
+</RelativeLayout>
