@@ -16,7 +16,13 @@ public class MainActivity extends BaseMvpActivity<ActivityMainBinding> {
         setContentView(R.layout.activity_main);
         setTitle("主页");
         showWhiteImmersionBar();
-        showErrorView();
+        binding.toolBar.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showErrorView();
+            }
+        },3000);
+
 
 //        ImmersionBar.with(this)
 //                .statusBarColor(R.color.colorPrimary)

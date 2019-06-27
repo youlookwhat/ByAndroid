@@ -50,7 +50,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
-    implementation project(path: ':mvpbinding')
+//    implementation project(path: ':mvpbinding')
+    implementation project(path: ':library')
 
     // 方法数扩容
     implementation 'androidx.multidex:multidex:2.0.1'

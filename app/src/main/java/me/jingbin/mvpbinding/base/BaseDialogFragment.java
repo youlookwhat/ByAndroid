@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.fragment.app.FragmentManager;
 
 /**
- * Created by jingbin on 2018/11/26.
+ * Created by jingbin on 2019/6/27.
  */
 
 public class BaseDialogFragment extends AppCompatDialogFragment {
