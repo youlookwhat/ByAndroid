@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2483D9</color>
+    <color name="colorPrimaryDark">#2483D9</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+    <color name="colorTheme">#2483D9</color>
+    <color name="colorWhite">#ffffffff</color>
+    <color name="colorText">#333333</color>
+    <!--    黑色的字体   -->
+    <color name="colorTextNext">#4B494C</color>
+    <!--    浅灰色的线条   -->
+    <color name="colorLine">#EDEDED</color>
+    <color name="color_home_txt">#323233</color>
+    <color name="color_gray">#999999</color>
+    <color name="colorTabText">#585858</color>
+</resources>

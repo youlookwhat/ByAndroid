@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/white" />
+
+        <include
+            android:id="@+id/rl_title"
+            layout="@layout/base_title" />
+
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ViewStub
+                android:id="@+id/vs_loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ViewStub
+                android:id="@+id/vs_load_error"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/layout_loading_error_" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>
