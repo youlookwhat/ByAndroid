@@ -43,7 +43,7 @@ public class BaseFragment extends Fragment {
         }
     }
 
-    public void addSubscription(Subscription s) {
+    public void addDispose(Subscription s) {
         if (this.mCompositeSubscription == null) {
             this.mCompositeSubscription = new CompositeSubscription();
         }

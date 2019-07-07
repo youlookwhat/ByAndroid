@@ -2,13 +2,16 @@ package me.jingbin.mvpbinding;
 
 import android.os.Bundle;
 
-import me.jingbin.mvpbinding.base.BaseMvpActivity;
+import me.jingbin.mvpbinding.base.BaseActivity;
+import me.jingbin.mvpbinding.contract.MainView;
 import me.jingbin.mvpbinding.databinding.ActivityMainBinding;
+import me.jingbin.mvpbinding.presenter.MainPresenter;
 
 /**
  * @author jingbin
+ * <a href="https://github.com/youlookwhat">Follow me</a>
  */
-public class MainActivity extends BaseMvpActivity<ActivityMainBinding> {
+public class MainActivity extends BaseActivity<MainPresenter, ActivityMainBinding> implements MainView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +19,16 @@ public class MainActivity extends BaseMvpActivity<ActivityMainBinding> {
         setContentView(R.layout.activity_main);
         setTitle("主页");
         showWhiteImmersionBar();
+        presenter.load();
+//        show();
+//        startProgressDialog();
+
         binding.toolBar.postDelayed(new Runnable() {
             @Override
             public void run() {
                 showErrorView();
             }
-        },3000);
+        }, 3000);
 
 
 //        ImmersionBar.with(this)
@@ -31,12 +38,28 @@ public class MainActivity extends BaseMvpActivity<ActivityMainBinding> {
     }
 
     @Override
+    protected MainPresenter createPresenter() {
+        return new MainPresenter(this);
+    }
+
+    @Override
     protected void onRefresh() {
-        showContentView();
+//        showContentView();
+        binding.toolBar.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showErrorView();
+            }
+        }, 3000);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+    }
+
+    @Override
+    public void showContent() {
+        showContentView();
     }
 }
