@@ -1,4 +1,4 @@
-package me.jingbin.mvpbinding.base.view;
+package me.jingbin.mvpbinding.base.mvp;
 
 /**
  * @author jingbin

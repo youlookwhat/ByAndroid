@@ -1,6 +1,4 @@
-package me.jingbin.mvpbinding.base.presenter;
-
-import android.app.Activity;
+package me.jingbin.mvpbinding.base.mvp;
 
 /**
  * @author jingbin
@@ -15,7 +13,7 @@ public interface IPresenter {
     void onStart();
 
     /**
-     * 在框架中 {@link Activity#onDestroy()} 时会默认调用 {@link IPresenter#onDestroy()}
+     * 在框架中 {@link me.jingbin.mvpbinding.base.BaseActivity#onDestroy()} 时会默认调用 {@link IPresenter#onDestroy()}
      */
     void onDestroy();
 }

@@ -23,7 +23,7 @@ import com.gyf.barlibrary.ImmersionBar;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import me.jingbin.mvpbinding.R;
-import me.jingbin.mvpbinding.base.presenter.BasePresenter;
+import me.jingbin.mvpbinding.base.mvp.BasePresenter;
 import me.jingbin.mvpbinding.databinding.BaseActivityBinding;
 import me.jingbin.mvpbinding.utils.CheckNetwork;
 
@@ -262,9 +262,9 @@ public abstract class BaseActivity<P extends BasePresenter, SV extends ViewDataB
             }
             mImmersionBar
                     .statusBarView(getView(R.id.top_view))
-//                    .navigationBarDarkIcon(true)
-//                    .navigationBarColorTransform(R.color.colorWhite)
-//                    .navigationBarAlpha(0.9f)
+                    .navigationBarDarkIcon(true)
+                    .navigationBarColorTransform(R.color.colorWhite)
+                    .navigationBarAlpha(0.9f)
                     .statusBarDarkFont(true, 0.2f)
                     .init();
         }
@@ -281,9 +281,9 @@ public abstract class BaseActivity<P extends BasePresenter, SV extends ViewDataB
             }
             mImmersionBar
                     .statusBarView(getView(R.id.top_view))
-//                    .navigationBarDarkIcon(true)
-//                    .navigationBarColorTransform(R.color.colorWhite)
-//                    .navigationBarAlpha(0.9f)// 虚拟键盘
+                    .navigationBarDarkIcon(true)
+                    .navigationBarColorTransform(R.color.colorWhite)
+                    .navigationBarAlpha(0.9f)// 虚拟键盘
                     .keyboardEnable(true)// 键盘弹起
                     .statusBarDarkFont(true, 0.2f)
                     .init();

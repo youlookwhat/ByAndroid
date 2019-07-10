@@ -1,4 +1,6 @@
-package me.jingbin.mvpbinding.base.presenter;
+package me.jingbin.mvpbinding.base.mvp;
+
+import android.util.Log;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
@@ -7,19 +9,26 @@ import androidx.lifecycle.OnLifecycleEvent;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
-import me.jingbin.mvpbinding.base.view.BaseView;
-import me.jingbin.mvpbinding.base.view.IView;
 
 /**
  * @author jingbin
  * @data 2019-06-30
- * @description Prestener基类
+ * @description Presenter 基类
  */
 public abstract class BasePresenter<V extends BaseView> implements IPresenter, LifecycleObserver {
 
     private CompositeDisposable mCompositeDisposable;
 
     protected V mView;
+    private IModel mModel;
+
+    protected <M extends IModel> void setModel(M mModel) {
+        this.mModel = mModel;
+        if (mModel instanceof LifecycleObserver) {
+            ((LifecycleOwner) mView).getLifecycle().addObserver((LifecycleObserver) mModel);
+            Log.e("tag", "-----mModel-----onStart");
+        }
+    }
 
     public BasePresenter() {
         onStart();
@@ -28,13 +37,13 @@ public abstract class BasePresenter<V extends BaseView> implements IPresenter, L
     /**
      * 如果当前页面不需要操作数据,只需要 View 层,则使用此构造函数
      *
-     * @param rootView
+     * @param mView
      */
-    public BasePresenter(V rootView) {
-        if (rootView == null) {
+    public BasePresenter(V mView) {
+        if (mView == null) {
             throw new NullPointerException(IView.class.getName() + " cannot be null");
         }
-        this.mView = rootView;
+        this.mView = mView;
         onStart();
     }
 
@@ -43,20 +52,10 @@ public abstract class BasePresenter<V extends BaseView> implements IPresenter, L
         //将 LifecycleObserver 注册给 LifecycleOwner 后 @OnLifecycleEvent 才可以正常使用
         if (mView != null && mView instanceof LifecycleOwner) {
             ((LifecycleOwner) mView).getLifecycle().addObserver(this);
+            Log.e("tag", "-----mView-----onStart");
         }
     }
 
-
-//    public void bind(V view) {
-//        this.mView = view;
-//    }
-
-//    public void onClear() {
-//        mView = null;
-//        if (this.mCompositeDisposable != null && !mCompositeDisposable.isDisposed()) {
-//            this.mCompositeDisposable.clear();
-//        }
-//    }
 
     public void addDispose(Disposable s) {
         if (this.mCompositeDisposable == null) {
@@ -77,9 +76,15 @@ public abstract class BasePresenter<V extends BaseView> implements IPresenter, L
          * 中引用了 {@code mModel} 或 {@code mRootView} 也可能会出现此情况
          */
         owner.getLifecycle().removeObserver(this);
-        mView = null;
-        if (this.mCompositeDisposable != null && !mCompositeDisposable.isDisposed()) {
-            this.mCompositeDisposable.clear();
+        if (mCompositeDisposable != null && !mCompositeDisposable.isDisposed()) {
+            mCompositeDisposable.clear();
         }
+        if (mModel != null) {
+            mModel.onDestroy();
+        }
+        mModel = null;
+        mView = null;
+        mCompositeDisposable = null;
+        Log.e("tag", "--BasePresenter ---OnLifecycleEvent--onDestroy");
     }
 }

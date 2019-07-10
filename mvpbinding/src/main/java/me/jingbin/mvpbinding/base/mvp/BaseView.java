@@ -1,4 +1,4 @@
-package me.jingbin.mvpbinding.base.view;
+package me.jingbin.mvpbinding.base.mvp;
 
 /**
  * @author jingbin
@@ -7,6 +7,9 @@ package me.jingbin.mvpbinding.base.view;
  */
 public interface BaseView extends IView {
 
+    /**
+     * 显示内容布局
+     */
     void showContent();
 
 }

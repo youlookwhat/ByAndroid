@@ -20,18 +20,8 @@ public class MainActivity extends BaseActivity<MainPresenter, ActivityMainBindin
         setContentView(R.layout.activity_main);
         setTitle("主页");
         showWhiteImmersionBar();
-        presenter.load();
-//        startProgressDialog();
-//        setNoTitleBar();
 
-        binding.toolBar.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                showErrorView();
-                stopProgressDialog();
-            }
-        }, 3000);
-
+        binding.toolBar.postDelayed(() -> presenter.load(), 1000);
 
 //        ImmersionBar.with(this)
 //                .statusBarColor(R.color.colorPrimary)
@@ -45,23 +35,17 @@ public class MainActivity extends BaseActivity<MainPresenter, ActivityMainBindin
     }
 
     @Override
-    protected void onRefresh() {
-//        showContentView();
-        binding.toolBar.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                showErrorView();
-            }
-        }, 3000);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
     public void showContent() {
+        showContentView();
+    }
+
+    @Override
+    public void showData(String text) {
+        binding.textView.setText(text);
+    }
+
+    @Override
+    protected void onRefresh() {
         showContentView();
     }
 }

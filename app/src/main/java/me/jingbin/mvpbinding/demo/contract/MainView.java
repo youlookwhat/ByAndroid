@@ -1,7 +1,7 @@
 package me.jingbin.mvpbinding.demo.contract;
 
 
-import me.jingbin.mvpbinding.base.view.BaseView;
+import me.jingbin.mvpbinding.base.mvp.BaseView;
 
 /**
  * @author jingbin
@@ -10,4 +10,5 @@ import me.jingbin.mvpbinding.base.view.BaseView;
  */
 public interface MainView extends BaseView {
 
+    void showData(String text);
 }
