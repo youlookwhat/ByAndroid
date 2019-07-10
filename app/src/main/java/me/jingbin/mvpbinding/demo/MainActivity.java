@@ -3,7 +3,7 @@ package me.jingbin.mvpbinding.demo;
 import android.os.Bundle;
 
 import me.jingbin.mvpbinding.base.BaseActivity;
-import me.jingbin.mvpbinding.demo.contract.MainView;
+import me.jingbin.mvpbinding.demo.contract.MainContract;
 import me.jingbin.mvpbinding.demo.databinding.ActivityMainBinding;
 import me.jingbin.mvpbinding.demo.presenter.MainPresenter;
 
@@ -12,7 +12,7 @@ import me.jingbin.mvpbinding.demo.presenter.MainPresenter;
  * @author jingbin
  * <a href="https://github.com/youlookwhat">Follow me</a>
  */
-public class MainActivity extends BaseActivity<MainPresenter, ActivityMainBinding> implements MainView {
+public class MainActivity extends BaseActivity<MainPresenter, ActivityMainBinding> implements MainContract.MainView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

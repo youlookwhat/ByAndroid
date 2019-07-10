@@ -9,11 +9,11 @@ import me.jingbin.mvpbinding.base.mvp.BaseView;
  */
 public interface MainContract {
 
-    interface OnLoadDataListener{
+    interface OnLoadDataListener {
         void loadDetail(String text);
     }
 
     interface MainView extends BaseView {
-        void showData();
+        void showData(String text);
     }
 }

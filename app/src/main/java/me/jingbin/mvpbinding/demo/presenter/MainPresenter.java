@@ -4,7 +4,6 @@ import android.util.Log;
 
 import me.jingbin.mvpbinding.base.mvp.BasePresenter;
 import me.jingbin.mvpbinding.demo.contract.MainContract;
-import me.jingbin.mvpbinding.demo.contract.MainView;
 import me.jingbin.mvpbinding.demo.model.MainModel;
 
 /**
@@ -12,11 +11,11 @@ import me.jingbin.mvpbinding.demo.model.MainModel;
  * @data 2019-07-01
  * @description
  */
-public class MainPresenter extends BasePresenter<MainView> {
+public class MainPresenter extends BasePresenter<MainContract.MainView> {
 
     private MainModel mModel;
 
-    public MainPresenter(MainView mView) {
+    public MainPresenter(MainContract.MainView mView) {
         super(mView);
         mModel = new MainModel();
         setModel(mModel);
