@@ -32,10 +32,10 @@ import me.jingbin.mvpbinding.utils.CheckNetwork;
  * @author jingbin
  * @date 19/6/26
  */
-public abstract class BaseActivity<P extends BasePresenter, SV extends ViewDataBinding> extends AppCompatActivity implements BaseFragment.IDialogAction, LifecycleOwner {
+public abstract class BaseActivity<P extends BasePresenter, B extends ViewDataBinding> extends AppCompatActivity implements BaseFragment.IDialogAction, LifecycleOwner {
 
     // 布局view
-    protected SV binding;
+    protected B binding;
     protected P presenter;
     protected Dialog progressDialog;
     private CompositeDisposable mCompositeDisposable;

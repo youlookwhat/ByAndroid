@@ -31,7 +31,7 @@
                 android:id="@+id/vs_load_error"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout="@layout/layout_loading_error_" />
+                android:layout="@layout/layout_loading_error" />
 
         </RelativeLayout>
     </LinearLayout>
