@@ -263,8 +263,7 @@ public abstract class BaseActivity<P extends BasePresenter, B extends ViewDataBi
             mImmersionBar
                     .statusBarView(getView(R.id.top_view))
                     .navigationBarDarkIcon(true)
-                    .navigationBarColorTransform(R.color.colorWhite)
-                    .navigationBarAlpha(0.9f)
+                    .navigationBarEnable(false)
                     .statusBarDarkFont(true, 0.2f)
                     .init();
         }
@@ -282,8 +281,7 @@ public abstract class BaseActivity<P extends BasePresenter, B extends ViewDataBi
             mImmersionBar
                     .statusBarView(getView(R.id.top_view))
                     .navigationBarDarkIcon(true)
-                    .navigationBarColorTransform(R.color.colorWhite)
-                    .navigationBarAlpha(0.9f)// 虚拟键盘
+                    .navigationBarEnable(false)
                     .keyboardEnable(true)// 键盘弹起
                     .statusBarDarkFont(true, 0.2f)
                     .init();
