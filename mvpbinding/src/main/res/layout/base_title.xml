@@ -55,7 +55,8 @@
         android:layout_alignParentEnd="true"
         android:background="?attr/selectableItemBackground"
         android:src="@drawable/icon_back"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:layout_alignParentRight="true" />
 
 
     <View

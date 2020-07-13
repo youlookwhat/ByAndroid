@@ -22,7 +22,8 @@
             android:text="努力加载中..."
             android:textColor="@color/colorTabText"
             android:textSize="14sp"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:layout_marginLeft="10dp" />
 
     </LinearLayout>
 </layout>
