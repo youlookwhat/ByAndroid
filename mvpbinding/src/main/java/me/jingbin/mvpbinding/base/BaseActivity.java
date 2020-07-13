@@ -83,6 +83,7 @@ public abstract class BaseActivity<P extends BasePresenter, B extends ViewDataBi
      */
     protected void setTitleBar(RelativeLayout title) {
         ImageView backButton = title.findViewById(R.id.ib_base_back);
+        backButton.setImageResource(R.drawable.icon_back);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

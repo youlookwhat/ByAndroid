@@ -28,6 +28,11 @@ public class TestFragment extends BaseFragment<NoPresenter, FragmentTestBinding>
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
     public int setContent() {
         return R.layout.fragment_test;
     }

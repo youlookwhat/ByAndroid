@@ -9,9 +9,9 @@ import me.jingbin.mvpbinding.R;
 /**
  * @author jingbin
  */
-class LoadDialog {
+public class LoadDialog {
 
-    static Dialog buildDialog(Context context) {
+    public static Dialog buildDialog(Context context) {
         Dialog progressDialog = new Dialog(context, R.style.CustomProgressDialog);
         progressDialog.setContentView(R.layout.base_loading_progress);
         progressDialog.setCanceledOnTouchOutside(false);

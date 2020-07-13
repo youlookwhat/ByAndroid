@@ -72,7 +72,6 @@ public class HttpUtils {
 
     public void init(Context context) {
         this.context = context;
-        HttpHead.init(context);
     }
 
 
