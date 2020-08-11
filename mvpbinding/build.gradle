@@ -45,6 +45,8 @@ dependencies {
     api 'io.reactivex.rxjava2:rxandroid:2.1.0'
     // cookie处理
     implementation files('libs/commons-lang-2.6.jar')
+    // AES加密
+    implementation files('libs/BASE64.jar')
     // import rx.Subscription;
     // api 'io.reactivex:rxandroid:1.2.1'
     // 将 compile 替换为 implementation 会报错 为implementation只能用在本项目中，主app项目不能引用
@@ -61,7 +63,8 @@ dependencies {
 //    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     // 高斯模糊和圆角等
     api 'jp.wasabeef:glide-transformations:4.0.1'
-
+    // toast
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
     // rxbus
     api 'io.reactivex:rxandroid:1.2.1'
     // 状态栏

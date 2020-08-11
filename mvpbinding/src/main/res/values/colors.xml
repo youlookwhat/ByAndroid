@@ -15,4 +15,5 @@
     <color name="color_home_txt">#323233</color>
     <color name="color_gray">#999999</color>
     <color name="colorTabText">#585858</color>
+    <color name="color_loading">#d6d6d6</color>
 </resources>
