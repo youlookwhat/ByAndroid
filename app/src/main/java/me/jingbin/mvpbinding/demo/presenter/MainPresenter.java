@@ -2,7 +2,7 @@ package me.jingbin.mvpbinding.demo.presenter;
 
 import android.util.Log;
 
-import me.jingbin.mvpbinding.base.mvp.BasePresenter;
+import me.jingbin.bymvp.base.mvp.BasePresenter;
 import me.jingbin.mvpbinding.demo.contract.MainContract;
 import me.jingbin.mvpbinding.demo.model.MainModel;
 

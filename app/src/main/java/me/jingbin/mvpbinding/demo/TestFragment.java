@@ -3,8 +3,8 @@ package me.jingbin.mvpbinding.demo;
 import android.content.Context;
 import android.os.Bundle;
 
-import me.jingbin.mvpbinding.base.BaseFragment;
-import me.jingbin.mvpbinding.base.mvp.NoPresenter;
+import me.jingbin.bymvp.base.BaseFragment;
+import me.jingbin.bymvp.base.mvp.NoPresenter;
 import me.jingbin.mvpbinding.demo.databinding.FragmentTestBinding;
 
 /**

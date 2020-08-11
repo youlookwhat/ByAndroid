@@ -1,6 +1,6 @@
 package me.jingbin.mvpbinding.demo.contract;
 
-import me.jingbin.mvpbinding.base.mvp.BaseView;
+import me.jingbin.bymvp.base.mvp.BaseView;
 
 /**
  * @author jingbin

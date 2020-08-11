@@ -1,6 +1,6 @@
 package me.jingbin.mvpbinding.demo.model;
 
-import me.jingbin.mvpbinding.base.mvp.BaseModel;
+import me.jingbin.bymvp.base.mvp.BaseModel;
 import me.jingbin.mvpbinding.demo.contract.MainContract;
 
 /**

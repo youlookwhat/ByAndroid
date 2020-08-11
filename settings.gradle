@@ -1,1 +1,1 @@
-include ':app', ':mvpbinding'
+include ':app', ':bymvp'
