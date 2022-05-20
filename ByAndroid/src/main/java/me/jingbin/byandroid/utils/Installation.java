@@ -1,13 +1,7 @@
 package me.jingbin.byandroid.utils;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-
-import androidx.core.app.ActivityCompat;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -45,45 +39,14 @@ public class Installation {
     private static final String INSTALLATION = "INSTALLATION";
 
     /**
-     * 首先：获取imei
-     * 然后：获取设备wifi的mac地址
-     * 最后：随机生成设备标识号
+     * 首先：获取设备wifi的mac地址
+     * 然后：随机生成设备标识号
      */
     public static String getUUid(Context context) {
-        if (!TextUtils.isEmpty(getIMEI(context))) {
-            return getIMEI(context);
-        } else if (!TextUtils.isEmpty(getMacAddress())) {
+        if (!TextUtils.isEmpty(getMacAddress())) {
             return getMacAddress();
         } else {
             return randomUUID(context);
-        }
-    }
-
-    /**
-     * 1、获取设备imei
-     * 注意：官方不推荐，没开权限无法获取到
-     */
-    @SuppressLint("HardwareIds")
-    public static String getIMEI(Context context) {
-        try {
-            String imei = "";
-            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                return imei;
-            }
-            //实例化TelephonyManager对象
-            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-            //获取IMEI号
-            if (telephonyManager != null) {
-                imei = telephonyManager.getDeviceId();
-            }
-            //再次做个验证，也不是什么时候都能获取到的
-            if (imei == null) {
-                imei = "";
-            }
-            return imei;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "";
         }
     }
 
