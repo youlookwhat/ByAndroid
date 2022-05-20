@@ -22,11 +22,6 @@ public class MainActivity extends BaseActivity<MainPresenter, ActivityMainBindin
         showWhiteImmersionBar();
 
         binding.toolBar.postDelayed(() -> presenter.load(), 1000);
-
-//        ImmersionBar.with(this)
-//                .statusBarColor(R.color.colorPrimary)
-//                .statusBarAlpha(0).init();
-//        ImmersionBar.setTitleBar(this, findViewById(R.id.toolBar));
     }
 
     @Override
