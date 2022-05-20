@@ -12,6 +12,6 @@
  - Glide - Loading images from network.
  - immersionbar - 状态栏
  - RxBus - 事件总线
- - ByRecyclerView - 列表 上拉加载
+ - ByRecyclerView - 列表 下拉刷新、上拉加载
  - ByWebView - WebView封装
 

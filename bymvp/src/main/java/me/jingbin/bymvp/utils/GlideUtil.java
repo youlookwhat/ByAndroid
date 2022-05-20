@@ -7,7 +7,6 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.databinding.BindingAdapter;
 import androidx.fragment.app.FragmentActivity;
 
 import com.bumptech.glide.Glide;
@@ -141,7 +140,6 @@ public class GlideUtil {
     /**
      * 加载圆角图,暂时用到显示头像
      */
-    @BindingAdapter("android:displayCircle")
     public static void displayCircle(ImageView imageView, String imageUrl) {
         Glide.with(imageView.getContext())
                 .load(imageUrl)
@@ -156,7 +154,6 @@ public class GlideUtil {
      *
      * @param defaultPicType 电影：0；妹子：1； 书籍：2
      */
-    @BindingAdapter({"android:displayFadeImage", "android:defaultPicType"})
     public static void displayFadeImage(ImageView imageView, String url, int defaultPicType) {
         displayEspImage(url, imageView, defaultPicType);
     }
@@ -164,7 +161,6 @@ public class GlideUtil {
     /**
      * 没有加载中的图
      */
-    @BindingAdapter("android:showImg")
     public static void showImg(ImageView imageView, String url) {
         Glide.with(imageView.getContext())
                 .load(url)
@@ -202,7 +198,6 @@ public class GlideUtil {
     /**
      * 电影详情页显示高斯背景图
      */
-    @BindingAdapter("android:showImgBg")
     public static void showImgBg(ImageView imageView, String url) {
         displayGaussian(imageView.getContext(), url, imageView);
     }
@@ -211,7 +206,6 @@ public class GlideUtil {
     /**
      * 热门电影头部图片
      */
-    @BindingAdapter({"android:displayRandom", "android:imgType"})
     public static void displayRandom(ImageView imageView, int imageUrl, int imgType) {
         Glide.with(imageView.getContext())
                 .load(imageUrl)
