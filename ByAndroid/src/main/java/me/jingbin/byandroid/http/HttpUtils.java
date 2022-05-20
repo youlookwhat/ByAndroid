@@ -120,9 +120,9 @@ public class HttpUtils {
             SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
             OkHttpClient.Builder okBuilder = new OkHttpClient.Builder();
             okBuilder.sslSocketFactory(sslSocketFactory, (X509TrustManager) trustAllCerts[0]);
-            okBuilder.readTimeout(30, TimeUnit.SECONDS);
-            okBuilder.connectTimeout(30, TimeUnit.SECONDS);
-            okBuilder.writeTimeout(30, TimeUnit.SECONDS);
+            okBuilder.readTimeout(15, TimeUnit.SECONDS);
+            okBuilder.connectTimeout(15, TimeUnit.SECONDS);
+            okBuilder.writeTimeout(15, TimeUnit.SECONDS);
             okBuilder.addInterceptor(new HttpHeadInterceptor());
             // 持久化cookie
             okBuilder.addInterceptor(new ReceivedCookiesInterceptor(context));
